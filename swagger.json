@@ -1,8 +1,9 @@
 openapi: 3.0.0
 info:
-  title: Anresco
+  title: AnrescoMobile
   version: 1.0.0
 servers:
+  - url: https://anresco-portal-dev2.qbench.net
   - url: http://localhost:9000
 components:
   securitySchemes:
@@ -10,57 +11,111 @@ components:
       type: http
       scheme: bearer
 paths:
-  /api/_search/customer-orders:
-    get:
-      tags:
-        - default
-      summary: Order-List Copy
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: cacheBuster
-          in: query
-          schema:
-            type: integer
-          example: '1693553871407'
-        - name: page
-          in: query
-          schema:
-            type: integer
-          example: '0'
-        - name: query
-          in: query
-          schema:
-            type: integer
-          example: '6183'
-        - name: size
-          in: query
-          schema:
-            type: integer
-          example: '20'
-        - name: sort
-          in: query
-          schema:
-            type: string
-          example: dateReceived,desc
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /api/authenticate:
+  /api/contacts/user:
     post:
       tags:
         - default
-      summary: Authenticate User
+      summary: Create_new_contact
       requestBody:
         content:
           application/json:
             schema:
               type: object
               example:
-                password: Admin@123
-                username: dishan.bhardwaj@technostacks.in
+                authorities:
+                  - ROLE_ADMIN
+                email: jigar.prajapat@technostacks.in
+                first_name: jigar2
+                last_name: prajapati
+                login: jigar4
+                password: jigar@123
+                phone: '8200717350'
+                receive_coa: true
+                receive_invoice: false
+                title: anresco api test3
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: customer-id
+          in: header
+          schema:
+            type: integer
+          example: '4262'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/samples/filter:
+    get:
+      tags:
+        - default
+      summary: Samples_filter
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: size
+          in: query
+          schema:
+            type: integer
+          example: '15'
+        - name: sort
+          in: query
+          schema:
+            type: string
+          example: id,desc
+        - name: category
+          in: query
+          schema:
+            type: string
+          example: '{"id": 5, "name": "Other"}'
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '0'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api /invoices/:
+    get:
+      tags:
+        - default
+      summary: Invoice_by_id
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: invoice_id
+          in: header
+          schema:
+            type: integer
+          example: '8'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/samples/mobile-lot:
+    get:
+      tags:
+        - default
+      summary: Mobile_lot
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/samples/mobile-category:
+    get:
+      tags:
+        - default
+      summary: Mobile_category
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: Successful response
