@@ -1,0 +1,68 @@
+openapi: 3.0.0
+info:
+  title: Anresco
+  version: 1.0.0
+servers:
+  - url: http://localhost:9000
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+paths:
+  /api/_search/customer-orders:
+    get:
+      tags:
+        - default
+      summary: Order-List Copy
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: cacheBuster
+          in: query
+          schema:
+            type: integer
+          example: '1693553871407'
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '0'
+        - name: query
+          in: query
+          schema:
+            type: integer
+          example: '6183'
+        - name: size
+          in: query
+          schema:
+            type: integer
+          example: '20'
+        - name: sort
+          in: query
+          schema:
+            type: string
+          example: dateReceived,desc
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/authenticate:
+    post:
+      tags:
+        - default
+      summary: Authenticate User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                password: Admin@123
+                username: dishan.bhardwaj@technostacks.in
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
