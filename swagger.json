@@ -10,9 +10,6 @@ components:
     bearerAuth:
       type: http
       scheme: bearer
-tags:
-  - name: Local
-  - name: Dev
 paths:
   /api/_search/customer-orders:
     get:
