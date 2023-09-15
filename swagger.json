@@ -14,7 +14,7 @@ paths:
   /api/contacts/user:
     post:
       tags:
-        - default
+        - Mobile APIs
       summary: Create_new_contact
       requestBody:
         content:
@@ -49,7 +49,7 @@ paths:
   /api/samples/filter:
     get:
       tags:
-        - default
+        - Mobile APIs
       summary: Samples_filter
       security:
         - bearerAuth: []
@@ -82,7 +82,7 @@ paths:
   /api /invoices/:
     get:
       tags:
-        - default
+        - Mobile APIs
       summary: Invoice_by_id
       security:
         - bearerAuth: []
@@ -100,7 +100,7 @@ paths:
   /api/samples/mobile-lot:
     get:
       tags:
-        - default
+        - Mobile APIs
       summary: Mobile_lot
       security:
         - bearerAuth: []
@@ -112,7 +112,7 @@ paths:
   /api/samples/mobile-category:
     get:
       tags:
-        - default
+        - Mobile APIs
       summary: Mobile_category
       security:
         - bearerAuth: []
