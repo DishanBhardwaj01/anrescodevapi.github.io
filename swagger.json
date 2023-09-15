@@ -17,7 +17,7 @@ paths:
   /api/_search/customer-orders:
     get:
       tags:
-        - Dev
+        - Mobile APIs
       summary: Order-List (DEV)
       security:
         - bearerAuth: []
@@ -50,7 +50,7 @@ paths:
   /api/samples/mobile-lot:
     get:
       tags:
-        - Dev
+        - Mobile APIs
       summary: Mobile-Lot (DEV)
       security:
         - bearerAuth: []
@@ -62,7 +62,7 @@ paths:
   /api/samples/mobile-category:
     get:
       tags:
-        - Dev
+        - Mobile APIs
       summary: Mobile-Category (DEV)
       security:
         - bearerAuth: []
@@ -74,7 +74,7 @@ paths:
   /api/customer-orders:
     get:
       tags:
-        - Dev
+        - Mobile APIs
       summary: List Customer-Orders
       security:
         - bearerAuth: []
@@ -102,7 +102,7 @@ paths:
   /api/invoices/attachment/1071:
     get:
       tags:
-        - Local
+        - Mobile APIs
       summary: Get Invoice Attachment by ID
       security:
         - bearerAuth: []
@@ -114,7 +114,7 @@ paths:
   /api/payment/filter:
     get:
       tags:
-        - Dev
+        - Mobile APIs
       summary: Payment-Filter
       parameters:
         - name: size
@@ -145,7 +145,7 @@ paths:
   /api/panels:
     get:
       tags:
-        - Local
+        - Mobile APIs
       summary: List Panels
       security:
         - bearerAuth: []
@@ -157,7 +157,7 @@ paths:
   /api/invoices/1071:
     get:
       tags:
-        - Local
+        - Mobile APIs
       summary: Get Invoice by ID
       security:
         - bearerAuth: []
@@ -169,7 +169,7 @@ paths:
   /api/invoices:
     get:
       tags:
-        - Local
+        - Mobile APIs
       summary: List Invoices
       security:
         - bearerAuth: []
@@ -181,7 +181,7 @@ paths:
   /api/assays:
     get:
       tags:
-        - Local
+        - Mobile APIs
       summary: List Assays
       security:
         - bearerAuth: []
@@ -193,7 +193,7 @@ paths:
   /api/samples:
     get:
       tags:
-        - Local
+        - Mobile APIs
       summary: List Samples
       security:
         - bearerAuth: []
@@ -205,7 +205,7 @@ paths:
   /api/_search/users:
     get:
       tags:
-        - Local
+        - Mobile APIs
       summary: Get Sample Using Search
       security:
         - bearerAuth: []
@@ -238,7 +238,7 @@ paths:
   /api/invoices/filter:
     get:
       tags:
-        - Local
+        - Mobile APIs
       summary: Get Invoice By Filter
       security:
         - bearerAuth: []
