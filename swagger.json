@@ -113,6 +113,8 @@ paths:
       tags:
         - Mobile APIs
       summary: Payment-Filter
+      security:
+        - bearerAuth: []
       parameters:
         - name: size
           in: query
