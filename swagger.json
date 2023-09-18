@@ -130,12 +130,12 @@ paths:
           in: query
           schema:
             type: string
-          example: id%2Cdesc
+          example: id,desc
         - name: paid
           in: query
           schema:
             type: string
-          example: 'false'' '
+          example: 'false'
       responses:
         '200':
           description: Successful response
