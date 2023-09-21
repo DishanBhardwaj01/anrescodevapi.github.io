@@ -11,6 +11,24 @@ components:
       type: http
       scheme: bearer
 paths:
+  /api/authenticate:
+    post:
+      tags:
+        - default
+      summary: Authenticate User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                password: Admin@123
+                username: dishan.bhardwaj@technostacks.in
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/customer-orders/6329:
     get:
       tags:
@@ -26,7 +44,7 @@ paths:
   /api/_search/customer-orders:
     get:
       tags:
-        - Mobile APIs
+        - default
       summary: Order-List (DEV)
       security:
         - bearerAuth: []
@@ -59,7 +77,7 @@ paths:
   /api/samples/mobile-lot:
     get:
       tags:
-        - Mobile APIs
+        - default
       summary: Mobile-Lot (DEV)
       security:
         - bearerAuth: []
@@ -71,7 +89,7 @@ paths:
   /api/samples/mobile-category:
     get:
       tags:
-        - Mobile APIs
+        - default
       summary: Mobile-Category (DEV)
       security:
         - bearerAuth: []
@@ -83,7 +101,7 @@ paths:
   /api/customer-orders:
     get:
       tags:
-        - Mobile APIs
+        - default
       summary: List Customer-Orders
       security:
         - bearerAuth: []
@@ -111,7 +129,7 @@ paths:
   /api/invoices/attachment/1071:
     get:
       tags:
-        - Mobile APIs
+        - default
       summary: Get Invoice Attachment by ID
       security:
         - bearerAuth: []
@@ -123,10 +141,8 @@ paths:
   /api/payment/filter:
     get:
       tags:
-        - Mobile APIs
+        - default
       summary: Payment-Filter
-      security:
-        - bearerAuth: []
       parameters:
         - name: size
           in: query
@@ -142,12 +158,12 @@ paths:
           in: query
           schema:
             type: string
-          example: id,desc
+          example: id%2Cdesc
         - name: paid
           in: query
           schema:
             type: string
-          example: 'false'
+          example: 'false'' '
       responses:
         '200':
           description: Successful response
@@ -156,7 +172,7 @@ paths:
   /api/panels:
     get:
       tags:
-        - Mobile APIs
+        - default
       summary: List Panels
       security:
         - bearerAuth: []
@@ -168,7 +184,7 @@ paths:
   /api/invoices/1071:
     get:
       tags:
-        - Mobile APIs
+        - default
       summary: Get Invoice by ID
       security:
         - bearerAuth: []
@@ -180,7 +196,7 @@ paths:
   /api/invoices:
     get:
       tags:
-        - Mobile APIs
+        - default
       summary: List Invoices
       security:
         - bearerAuth: []
@@ -192,7 +208,7 @@ paths:
   /api/assays:
     get:
       tags:
-        - Mobile APIs
+        - default
       summary: List Assays
       security:
         - bearerAuth: []
@@ -204,7 +220,7 @@ paths:
   /api/samples:
     get:
       tags:
-        - Mobile APIs
+        - default
       summary: List Samples
       security:
         - bearerAuth: []
@@ -216,7 +232,7 @@ paths:
   /api/_search/users:
     get:
       tags:
-        - Mobile APIs
+        - default
       summary: Get Sample Using Search
       security:
         - bearerAuth: []
@@ -249,7 +265,7 @@ paths:
   /api/invoices/filter:
     get:
       tags:
-        - Mobile APIs
+        - default
       summary: Get Invoice By Filter
       security:
         - bearerAuth: []
@@ -294,24 +310,6 @@ paths:
           schema:
             type: string
           example: APPROVED
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /api/authenticate:
-    post:
-      tags:
-        - Mobile APIs
-      summary: Authenticate User
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              example:
-                password: Admin@123
-                username: dishan.bhardwaj@technostacks.in
       responses:
         '200':
           description: Successful response
